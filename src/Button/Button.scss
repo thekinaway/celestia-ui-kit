@@ -1,0 +1,62 @@
+@use '../styles/_base' as *;
+
+.button {
+  @include box-shadow(5px, 5px, 8px, 0, rgba(28, 27, 88, 0.315));
+  @include transition($duration: 0.4s, $timing: ease-in-out, $delay: 100ms);
+
+  padding: 1.5rem 3rem;
+  border: none;
+  border-radius: 1.4rem;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: translateY(4px);
+    filter: none;
+  }
+
+  &--primary {
+    @include font-styles(1.2rem, bold, $white);
+    @include bg-linear-gradient(125deg, $primary 50%, $blue600);
+
+    &:hover {
+      @extend %white-glow;
+    }
+  }
+
+  &--secondary {
+    @include font-styles(1.2rem, bold, $primary);
+    @include bg-linear-gradient(125deg, #ffffff 50%, #f5f5ff);
+
+    &:hover {
+      @extend %celestial-glow;
+    }
+  }
+
+  &--outline {
+    @include font-styles(1.2rem, bold, $primary);
+    background: transparent;
+    border: 1px solid $primary;
+
+    &:hover {
+      color: $white;
+      background: $primary;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &--small {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+  }
+
+  &--large {
+    font-size: 1.6rem;
+    padding: 2rem 4rem;
+    border-radius: 1.8rem;
+  }
+}
