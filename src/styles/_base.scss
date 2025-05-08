@@ -1,5 +1,6 @@
   // mixins
-  @mixin display-flex($direction: row, $wrap: nowrap, $justify: center, $align: center) {
+  @mixin display-flex($direction: row, $wrap: nowrap, $justify: center, $align: center, $gap: 0) {
+    display: flex;
     -webkit-box-direction: $direction;
     -ms-flex-direction: $direction;
     flex-direction: $direction;
@@ -12,6 +13,7 @@
     -webkit-box-align: $align;
     -ms-flex-align: $align;
     align-items: $align;
+    gap: $gap;
   }
 
   @mixin font-styles($size: 1rem, $weight: normal, $color: $black) {

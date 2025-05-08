@@ -19,39 +19,48 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: 'Get Started',
+    title: 'Get Started',
     variant: 'primary',
-    size: 'default',
+    size: 'medium',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'Get Started',
+    title: 'Get Started',
     variant: 'secondary',
-    size: 'default',
+    size: 'medium',
   },
 };
 
 export const Outline: Story = {
   args: {
-    children: 'Get Started',
+    title: 'Get Started',
     variant: 'outline',
-    size: 'default',
+    size: 'medium',
   },
 };
 
 export const Small: Story = {
   args: {
-    children: 'Get Started',
+    title: 'Get Started',
     variant: 'primary',
     size: 'small',
   },
 };
 
+export const Meduim: Story = {
+  args: {
+    title: 'Get Started',
+    variant: 'primary',
+    size: 'medium',
+  },
+};
+
+
 export const Large: Story = {
   args: {
-    children: 'Get Started',
+    title: 'Get Started',
     variant: 'primary',
     size: 'large',
   },

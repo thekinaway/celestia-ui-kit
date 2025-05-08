@@ -4,22 +4,22 @@ import "./Button.scss";
 
 export interface IButtonProps {
     variant?: 'primary' | 'secondary' | 'outline';
-    size?: 'small' | 'large' | 'default';
-    children?: React.ReactNode;
+    size?: 'small' | 'medium' | 'large';
+    title: string;
     onClick?: () => void;
 }
 
 const Button: FC<IButtonProps> = ({
-    children,
+    title,
     variant = 'secondary',
-    size = 'default',
+    size = 'meduim',
     onClick = () => { },
     ...props
 }) => {
     return (
         <button {...props} className={`button button--${variant} button--${size}`} onClick={onClick}>
             <span>
-                {children}
+                {title}
             </span>
         </button>
     )

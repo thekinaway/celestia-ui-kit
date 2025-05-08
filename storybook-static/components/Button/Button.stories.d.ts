@@ -17,4 +17,5 @@ export declare const Primary: Story;
 export declare const Secondary: Story;
 export declare const Outline: Story;
 export declare const Small: Story;
+export declare const Meduim: Story;
 export declare const Large: Story;

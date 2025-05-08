@@ -1,0 +1,34 @@
+@use '../../styles/base' as *;
+
+.date-picker {
+    @include display-flex(column, nowrap, center, center, 20px);
+    // position: relative;
+}
+
+.year-picker-container {
+    @include display-flex(column, nowrap, space-between, center, 12px);
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow:  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+    // position: absolute;
+    // top: 80px;
+    // z-index: 9999;
+}
+
+.year-picker-months {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.month-item {
+    background: none;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 9px;
+
+    &:hover {
+        background: #eaeaea;
+    }
+}
