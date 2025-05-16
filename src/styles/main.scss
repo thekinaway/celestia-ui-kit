@@ -1,2 +1,9 @@
-@use './base';
-@use './global';
+@use "./base" as *;
+// @include reset;
+
+$font-stack: "Montserrat", sans-serif;
+
+body {
+  @include font-styles(1rem, 400, $primary);
+  font-family: $font-stack;
+}

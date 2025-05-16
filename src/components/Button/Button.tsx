@@ -1,28 +1,33 @@
 import React from "react";
 import { FC } from "react";
-import "./Button.scss";
+import styles from "./Button.module.scss";
 
 export interface IButtonProps {
-    variant?: 'primary' | 'secondary' | 'outline';
-    size?: 'small' | 'medium' | 'large';
-    title: string;
-    onClick?: () => void;
+  variant?: "primary" | "text" | "outline";
+  size?: "small" | "medium" | "large";
+  title: string;
+  onClick?: () => void;
+  icon?: string;
 }
 
 const Button: FC<IButtonProps> = ({
-    title,
-    variant = 'secondary',
-    size = 'meduim',
-    onClick = () => { },
-    ...props
+  title,
+  variant = "text",
+  size = "meduim",
+  onClick = () => {},
+  icon,
+  ...props
 }) => {
-    return (
-        <button {...props} className={`button button--${variant} button--${size}`} onClick={onClick}>
-            <span>
-                {title}
-            </span>
-        </button>
-    )
-}
+  return (
+    <button
+      {...props}
+      className={`${styles.button} ${styles[`button--${variant}`]} ${styles[`button--${size}`]}`}
+      onClick={onClick}
+    >
+      {icon && <img src={icon} alt="Button icon" />}
+      <span>{title}</span>
+    </button>
+  );
+};
 
 export default Button;

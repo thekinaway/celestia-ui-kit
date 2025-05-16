@@ -1,16 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import DatePicker from './DatePicker';
+import type { Meta, StoryObj } from "@storybook/react";
+import DatePicker from "./DatePicker";
 
 const meta = {
-  title: 'Example/DatePicker',
+  title: "DatePicker",
   component: DatePicker,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
-  argTypes: {
-  },
-  args: {  },
+  tags: ["autodocs"],
+  argTypes: {},
+  args: {},
 } satisfies Meta<typeof DatePicker>;
 
 export default meta;

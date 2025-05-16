@@ -1,0 +1,56 @@
+@use "@/styles/base" as *;
+
+.button {
+  @include display-flex(row, nowrap, center, center, 10px);
+
+  padding: 1.5rem 3rem;
+  border: none;
+  border-radius: 1.4rem;
+  cursor: pointer;
+
+  &:active {
+    transform: translateY(4px);
+  }
+
+  &--primary {
+    @include font-styles(1.2rem, 400, $white);
+    background-color: $primary;
+
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+
+  &--text {
+    @include font-styles(1.2rem, 400, $primary);
+    background-color: $white;
+
+    &:hover {
+      background-color: $grey;
+    }
+  }
+
+  &--outline {
+    @include font-styles(1.2rem, 400, $primary);
+    background: transparent;
+    border: 1px solid $primary;
+
+    &:hover {
+      color: $white;
+      background: $primary;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &--small {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+  }
+
+  &--large {
+    font-size: 1.6rem;
+    padding: 2rem 4rem;
+    border-radius: 1.8rem;
+  }
+}

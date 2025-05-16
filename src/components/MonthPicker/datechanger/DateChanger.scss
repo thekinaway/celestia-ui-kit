@@ -1,35 +1,38 @@
-@use '../../../styles/base' as *;
+@use "../../../styles/base" as *;
 
 .date-changer {
-    @include display-flex(row, nowrap, space-between, center);
+  @include display-flex(row, nowrap, space-between, center);
 
-    padding: 8px 0;
-    border-radius: 50px;
+  padding: 8px 16px;
+  border-radius: 50px;
 
-    button {
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        color: $white;
-    }
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: $white;
+  }
 }
 
 .month-picker {
-    background: $primary;
-    color: $white;
-    min-width: 200px;
-    max-width: 200px;
-    width: 100%;
+  background: $primary;
+  min-width: 240px;
+  max-width: 240px;
+  width: 100%;
 }
 
 .year-picker {
-    background: $white;
-    color: $primary;
-    max-width: 140px;
-    width: 100%;
+  background: $white;
+  color: $primary;
+  max-width: 140px;
+  width: 100%;
 
-    .button--date {
-        color: $black;
-        font-size: 16px;
-    }
+  .button--date {
+    color: $primary;
+    font-size: 16px;
+  }
+
+  svg path {
+    stroke: $primary;
+  }
 }

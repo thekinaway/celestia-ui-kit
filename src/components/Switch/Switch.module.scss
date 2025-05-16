@@ -1,0 +1,113 @@
+@use "@/styles/base" as *;
+
+:root {
+  --circle-width: 1.5rem;
+}
+
+.switch {
+  border-radius: 9999px;
+  position: relative;
+  width: var(--switch-width);
+  height: var(--switch-height);
+
+  &--light {
+    background: #d4d5de;
+  }
+
+  &--dark {
+    background: $white;
+
+    .switch__circle {
+      background: #d4d5de;
+    }
+  }
+
+  &:active {
+    .switch__circle {
+      width: calc(var(--circle-width) + 0.5rem);
+    }
+  }
+
+  &--s {
+    --switch-width: 2.5rem;
+    --switch-height: 1.5rem;
+
+    .switch__circle {
+      --circle-width: 1rem;
+    }
+  }
+
+  &--m {
+    --switch-width: 3.5rem;
+    --switch-height: 2rem;
+  }
+
+  &--checked {
+    background-color: $primary;
+
+    &:active {
+      .switch__circle {
+        left: -5px;
+      }
+    }
+
+    .switch__circle {
+      transform: translateX(
+        calc(var(--switch-width) - var(--circle-width) - 0.5rem)
+      );
+      background-color: $white;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    left: 0.25rem;
+    top: 0.25rem;
+    display: flex;
+    width: var(--circle-width);
+    height: calc(var(--switch-height) - 0.5rem);
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: $white;
+    transition: all 0.2s ease;
+  }
+}
+
+.switch__label {
+  @include display-flex(row, nowrap, space-between, center, 10px);
+
+  position: relative;
+  cursor: pointer;
+
+  &--light {
+    color: $black;
+  }
+
+  &--dark {
+    color: $white;
+  }
+
+  &--right {
+    flex-direction: row-reverse;
+  }
+
+  &--disabled {
+    .switch {
+      background-color: $grey;
+    }
+  }
+}
+.switch__input {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+.switch__input:checked + .switch__label .switch__track {
+  background-color: #4caf50;
+}
+
+.switch__input:checked + .switch__label .switch__thumb {
+  transform: translateX(20px);
+}
