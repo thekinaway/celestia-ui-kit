@@ -1,0 +1,21 @@
+@use "@/styles/base" as *;
+
+.checkbox {
+  @include display-flex(row, nowrap, start, center, 8px);
+
+  &--light {
+    color: $black;
+  }
+
+  &--dark {
+    color: $white;
+  }
+
+  &--s {
+    font-size: 14px;
+  }
+
+  &--m {
+    font-size: 18px;
+  }
+}
