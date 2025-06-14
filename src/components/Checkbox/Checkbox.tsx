@@ -1,15 +1,38 @@
-import React from "react";
-import styles from "./Checkbox.module.scss";
-import clsx from "clsx";
 import "@/styles/main.scss";
+
+import clsx from "clsx";
+import React, { useEffect, useState } from "react";
+
+import styles from "./Checkbox.module.scss";
 
 export interface ICheckboxProps {
   size: "s" | "m";
   theme: "light" | "dark";
   label?: string;
+  checked?: boolean;
+  onChange?: (checked: boolean) => void;
 }
 
-const Checkbox = ({ size, theme, label }: ICheckboxProps) => {
+const CheckboxComponent = ({
+  size,
+  theme,
+  label,
+  checked,
+  onChange,
+}: ICheckboxProps) => {
+  const [isChecked, setIsChecked] = useState(checked || false);
+
+  useEffect(() => {
+    setIsChecked(checked ?? false);
+  }, [checked]);
+
+  const onChangeHandler = () => {
+    setIsChecked(!isChecked);
+    if (onChange) {
+      onChange(isChecked);
+    }
+  };
+
   return (
     <label
       className={clsx(
@@ -18,10 +41,16 @@ const Checkbox = ({ size, theme, label }: ICheckboxProps) => {
         styles[`checkbox--${theme}`]
       )}
     >
-      <input type="checkbox" />
+      <input
+        type="checkbox"
+        checked={isChecked}
+        onChange={onChangeHandler}
+        className={styles["checkbox__input"]}
+      />
+      <div className={styles["checkbox__container"]}></div>
       <span>{label}</span>
     </label>
   );
 };
 
-export { Checkbox };
+export const Checkbox = React.memo(CheckboxComponent);

@@ -1,0 +1,22 @@
+@use "@/styles/base" as *;
+
+.view-switcher {
+  @include display-flex(row, nowrap, space-between, center);
+
+  padding: 8px 16px;
+  border-radius: 28px;
+  background-color: rgb(0, 113, 227);
+
+  button {
+    font-size: 16px;
+    font-weight: 400;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: $white;
+  }
+
+  svg path {
+    stroke: $white;
+  }
+}

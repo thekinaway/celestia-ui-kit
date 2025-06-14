@@ -1,7 +1,6 @@
 @use "./base" as *;
-// @include reset;
 
-$font-stack: "Montserrat", sans-serif;
+$font-stack: "SF Pro Display", sans-serif;
 
 body {
   @include font-styles(1rem, 400, $primary);

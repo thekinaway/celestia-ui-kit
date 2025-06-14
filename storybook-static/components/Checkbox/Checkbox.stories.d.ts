@@ -1,0 +1,11 @@
+import { Meta, StoryObj } from '@storybook/react';
+import { ICheckboxProps } from './Checkbox';
+declare const meta: Meta<ICheckboxProps>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const Checked: Story;
+export declare const Unchecked: Story;
+export declare const LightTheme: Story;
+export declare const DarkTheme: Story;
+export declare const S: Story;
+export declare const M: Story;

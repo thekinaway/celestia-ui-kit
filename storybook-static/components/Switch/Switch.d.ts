@@ -9,4 +9,5 @@ export interface ISwitchProps {
     theme: "light" | "dark";
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-export declare const Switch: FC<ISwitchProps>;
+declare const Switch: FC<ISwitchProps>;
+export default Switch;

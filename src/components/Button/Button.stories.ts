@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
+
 import Button, { IButtonProps } from "./Button";
 
 const meta: Meta<IButtonProps> = {
-  title: "Button",
+  title: "Button/Button",
   component: Button,
   parameters: {
     layout: "centered",

@@ -2,6 +2,7 @@
 
 .checkbox {
   @include display-flex(row, nowrap, start, center, 8px);
+  user-select: none;
 
   &--light {
     color: $black;
@@ -17,5 +18,40 @@
 
   &--m {
     font-size: 18px;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__container {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid $primary;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  &__container::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  &__input:checked + &__container {
+    background-color: $primary;
+  }
+
+  &__input:checked + &__container::after {
+    display: block;
   }
 }

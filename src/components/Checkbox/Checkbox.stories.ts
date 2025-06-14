@@ -1,14 +1,32 @@
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { Checkbox, ICheckboxProps } from "./Checkbox";
 
 const meta: Meta<ICheckboxProps> = {
-  title: "Checkbox",
+  title: "Checkbox/Checkbox",
   component: Checkbox,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    size: {
+      control: { type: "select" },
+      options: ["s", "m"],
+      description: "Size of the checkbox",
+    },
+    theme: {
+      table: { disable: true },
+    },
+    label: {
+      control: { type: "text" },
+      description: "Label for the checkbox",
+    },
+    checked: {
+      control: { type: "boolean" },
+      description: "Initial checked state of the checkbox",
+    },
+  },
 } satisfies Meta<typeof Checkbox>;
 
 export default meta;

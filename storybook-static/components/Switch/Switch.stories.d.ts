@@ -14,9 +14,12 @@ declare const meta: {
 };
 export default meta;
 type Story = StoryObj<typeof meta>;
+export declare const Checked: Story;
+export declare const DefaultChecked: Story;
 export declare const LightTheme: Story;
 export declare const DarkTheme: Story;
 export declare const Disabled: Story;
-export declare const Position: Story;
+export declare const LeftPosition: Story;
+export declare const RightPosition: Story;
 export declare const S: Story;
 export declare const M: Story;

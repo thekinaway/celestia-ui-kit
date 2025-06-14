@@ -5,6 +5,7 @@ export interface IButtonProps {
     title: string;
     onClick?: () => void;
     icon?: string;
+    className?: string;
 }
 declare const Button: FC<IButtonProps>;
 export default Button;

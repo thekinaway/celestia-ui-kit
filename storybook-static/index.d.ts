@@ -1,2 +1,3 @@
 export { Button } from './components/Button';
-export { MonthPicker } from './components/MonthPicker';
+export { MonthYearPicker } from './components/MonthYearPicker';
+export { Switch } from './components/Switch';

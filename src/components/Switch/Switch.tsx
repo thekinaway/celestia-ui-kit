@@ -1,7 +1,9 @@
-import React, { FC, useState } from "react";
-import clsx from "clsx";
-import styles from "./Switch.module.scss";
 import "@/styles/main.scss";
+
+import clsx from "clsx";
+import React, { FC, useState } from "react";
+
+import styles from "./Switch.module.scss";
 
 export interface ISwitchProps {
   defaultChecked?: boolean;
@@ -14,7 +16,7 @@ export interface ISwitchProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Switch: FC<ISwitchProps> = ({
+const Switch: FC<ISwitchProps> = ({
   theme,
   checked,
   defaultChecked,
@@ -65,3 +67,5 @@ export const Switch: FC<ISwitchProps> = ({
     </label>
   );
 };
+
+export default Switch;

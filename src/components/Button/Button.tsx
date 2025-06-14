@@ -1,5 +1,6 @@
 import React from "react";
 import { FC } from "react";
+
 import styles from "./Button.module.scss";
 
 export interface IButtonProps {
@@ -8,6 +9,7 @@ export interface IButtonProps {
   title: string;
   onClick?: () => void;
   icon?: string;
+  className?: string;
 }
 
 const Button: FC<IButtonProps> = ({
@@ -16,12 +18,13 @@ const Button: FC<IButtonProps> = ({
   size = "meduim",
   onClick = () => {},
   icon,
+  className,
   ...props
 }) => {
   return (
     <button
       {...props}
-      className={`${styles.button} ${styles[`button--${variant}`]} ${styles[`button--${size}`]}`}
+      className={`${styles.button} ${styles[`button--${variant}`]} ${styles[`button--${size}`]} ${className || ""}`}
       onClick={onClick}
     >
       {icon && <img src={icon} alt="Button icon" />}

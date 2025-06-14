@@ -1,0 +1,23 @@
+@use "@/styles/_base" as *;
+
+.checkbox-group {
+  @include display-flex(column, wrap, start, start, 14px);
+  color: $black;
+
+  &--horizontal {
+    @include display-flex(row, wrap, start, start, 14px);
+  }
+
+  &--dark {
+    color: $white;
+  }
+
+  &--m {
+    font-size: 20px;
+  }
+
+  &__items {
+    @include display-flex(column, wrap, start, start, 10px);
+    margin-left: 20px;
+  }
+}

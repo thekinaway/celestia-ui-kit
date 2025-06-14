@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Switch, ISwitchProps } from "./Switch";
+
+import Switch, { ISwitchProps } from "./Switch";
 
 const meta = {
-  title: "Switch",
+  title: "Switch/Switch",
   component: Switch,
   parameters: {
     layout: "centered",
